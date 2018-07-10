@@ -1,5 +1,9 @@
 import maya.cmds as mc
 import os
+from subprocess import call
+
+def rush_dash():
+    call('/usr/local/rush/bin/irush')
 
 
 class newShelf():
@@ -20,6 +24,6 @@ class newShelf():
 
 class myShelf(newShelf):
     def build(self):
-        self.addButton("testing", mc.polyCube)
+        self.addButton("testing", rush_dash)
 
 myShelf("custom")
