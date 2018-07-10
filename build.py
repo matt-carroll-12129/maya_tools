@@ -1,4 +1,6 @@
-import maya.cmds as mc 
+import maya.cmds as mc
+import os
+
 
 class newShelf():
 	def __init__(self, name):
@@ -12,16 +14,12 @@ class newShelf():
 	def build(self):
 	    pass
 
-	def addButton(self, label, icon="commandButton.png"):
+	def addButton(self, label, command, icon="commandButton.png", flat=0):
 		mc.setParent(self.name)
-		mc.shelfButton(width=37, height=37, image=icon, l=label)
+		mc.shelfButton(width=50, height=35, image=icon, l=label, c=command, fla=flat)
 
 class myShelf(newShelf):
     def build(self):
-        self.addButton("testing")
-        self.addButton("testing2")
-        self.addButton("testing3")
+        self.addButton("testing", mc.polyCube)
 
 myShelf("custom")
-myShelf("custom2")
-myShelf("custom3")
