@@ -3,7 +3,7 @@ import os
 from subprocess import call
 
 def rush_dash():
-    call('/usr/local/rush/bin/irush')
+	call('/usr/local/rush/bin/irush')
 
 
 class newShelf():
