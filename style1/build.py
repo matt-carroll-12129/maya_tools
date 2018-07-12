@@ -1,10 +1,14 @@
 import maya.cmds as mc
 import os
 from subprocess import call
+import submit_maya
 
 def rush_dash():
 	call('/usr/local/rush/bin/irush')
 
+def rush_submit():
+	submit_maya.MAIN_Input(())
+	
 
 class newShelf():
 	def __init__(self, name):
@@ -25,5 +29,6 @@ class newShelf():
 class myShelf(newShelf):
     def build(self):
         self.addButton("testing", rush_dash)
+        self.addButton("testing2", rush_submit)
 
 myShelf("custom")
